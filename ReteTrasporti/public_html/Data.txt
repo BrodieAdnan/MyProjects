@@ -1,0 +1,144 @@
+F{"nome":"Martiri della Libertà", "x": 300, "y": 140, "codice": 26}
+F{"nome":"Mestre Centro", "x": 500, "y": 100, "codice": 27}
+F{"nome":"Corso del Popolo", "x": 200, "y": 50, "codice": 28}
+F{"nome":"Gazzera", "x": 1000, "y": 100, "codice": 30}
+F{"nome":"Zelarino", "x": 1250, "y": 150, "codice": 31}
+F{"nome":"San Giuliano", "x": 1100, "y": 350, "codice": 32}
+F{"nome":"Carpenedo", "x": 1300, "y": 50, "codice": 33}
+F{"nome":"Favaro", "x": 900, "y": 600, "codice": 34}
+F{"nome":"Aeroporto", "x": 100, "y": 70, "codice": 35}
+F{"nome":"Marghera", "x": 450, "y": 30, "codice": 36}
+F{"nome":"Asseggiano", "x": 750, "y": 700, "codice": 37}
+F{"nome":"27 Ottobre", "x": 1100, "y": 560, "codice": 38}
+F{"nome":"Arduino", "x": 1100, "y": 700, "codice": 39}
+F{"nome":"Via Bissuola", "x": 1350, "y": 620, "codice": 40}
+F{"nome":"Martellago", "x": 550, "y": 700, "codice": 41}
+F{"nome":"Venezia", "x": 350, "y": 750, "codice": 42}
+F{"nome":"San Marco", "x": 30, "y": 550, "codice": 43}
+F{"nome":"Sanremo", "x": 675, "y": 20, "codice": 3}
+F{"nome":"Chiesa Spinea", "x": 840, "y": 75, "codice": 4}
+F{"nome":"Via Miranese", "x": 625, "y": 110, "codice": 5}
+F{"nome":"Piazza San Giorgio", "x": 860, "y": 210, "codice": 6}
+F{"nome":"Ivancich", "x": 365, "y": 230, "codice": 7}
+F{"nome":"Piemonte", "x": 145, "y": 300, "codice": 8}
+F{"nome":"Lazio", "x": 615, "y": 275, "codice": 9}
+F{"nome":"Calucci", "x": 760, "y": 320, "codice": 10}
+F{"nome":"Giustizia", "x": 215, "y": 500, "codice": 11}
+F{"nome":"Monteverdi", "x": 450, "y": 440, "codice": 12}
+F{"nome":"Vivaldi", "x": 625, "y": 445, "codice": 13}
+F{"nome":"Carducci", "x": 790, "y": 460, "codice": 14}
+F{"nome":"Felisati", "x": 855, "y": 500, "codice": 15}
+F{"nome":"Cappuccina", "x": 175, "y": 570, "codice": 16}
+F{"nome":"Sernaglia", "x": 425, "y": 570, "codice": 17}
+F{"nome": "Vampa", "x": 410, "y": 620, "codice": 18}
+F{"nome":"Fincantieri", "x": 735, "y": 570, "codice": 19}
+F{"nome":"Graspo D'Uva", "x": 640, "y": 620, "codice": 20}
+F{"nome":"Piazzale Roma", "x": 660, "y": 790, "codice": 22}
+F{"nome": "Olivi", "x":960, "y":500, "codice": 23}
+F{"nome": "via Piave", "x":920, "y":340, "codice": 24}
+F{"nome": "Stazione F.S.", "x":1100, "y":210, "codice": 25}
+T{"partenza": "Villaggio dei Fiori", "arrivo": "Aeroporto", "tempo": 2}
+T{"partenza": "Via Miranese", "arrivo": "Piazza San Giorgio", "tempo": 2}
+T{"partenza": "Chiesa Spinea", "arrivo": "Sanremo", "tempo": 2}
+T{"partenza": "Piazza San Giorgio", "arrivo": "via Piave", "tempo": 2}
+T{"partenza": "Calucci", "arrivo": "Vivaldi", "tempo": 2}
+T{"partenza": "Ivancich", "arrivo": "Piemonte", "tempo": 2}
+T{"partenza": "Piemonte", "arrivo": "Giustizia", "tempo": 2}
+T{"partenza": "Ivancich", "arrivo": "Via Miranese", "tempo": 2}
+T{"partenza": "Sanremo", "arrivo": "Via Miranese", "tempo": 2}
+T{"partenza": "Via Miranese", "arrivo": "Lazio", "tempo": 2}
+T{"partenza": "Ivancich", "arrivo": "Vivaldi", "tempo": 2}
+T{"partenza": "Chiesa Spinea", "arrivo": "Piazza San Giorgio", "tempo": 2}
+T{"partenza": "Piazza San Giorgio", "arrivo": "Calucci", "tempo": 2}
+T{"partenza": "Lazio", "arrivo": "Calucci", "tempo": 2}
+T{"partenza": "Calucci", "arrivo": "Carducci", "tempo": 2}
+T{"partenza": "Lazio", "arrivo": "Vivaldi", "tempo": 2}
+T{"partenza": "Carducci", "arrivo": "Felisati", "tempo": 2}
+T{"partenza": "Carducci", "arrivo": "Fincantieri", "tempo": 2}
+T{"partenza": "Vivaldi", "arrivo": "Fincantieri", "tempo": 2}
+T{"partenza": "Fincantieri", "arrivo": "Graspo D'Uva", "tempo": 2}
+T{"partenza": "Graspo D'Uva", "arrivo": "Piazzale Roma", "tempo": 2}
+T{"partenza": "Graspo D'Uva", "arrivo": "Sernaglia", "tempo": 2}
+T{"partenza": "Monteverdi", "arrivo": "Vivaldi", "tempo": 2}
+T{"partenza": "Monteverdi", "arrivo": "Sernaglia", "tempo": 2}
+T{"partenza": "Giustizia", "arrivo": "Sernaglia", "tempo": 2}
+T{"partenza": "Giustizia", "arrivo": "Monteverdi", "tempo": 2}
+T{"partenza": "Giustizia", "arrivo": "Cappuccina", "tempo": 2}
+T{"partenza": "Sernaglia", "arrivo": "Vampa", "tempo": 2}
+T{"partenza": "via Piave", "arrivo": "Olivi", "tempo": 2}
+T{"partenza": "Calucci", "arrivo": "via Piave", "tempo": 2}
+T{"partenza": "Stazione F.S.", "arrivo": "via Piave", "tempo": 2}
+T{"partenza": "Monteverdi", "arrivo": "Ivancich", "tempo": 2}
+T{"partenza": "Lazio", "arrivo": "Ivancich", "tempo": 2}
+T{"partenza": "Vivaldi", "arrivo": "Graspo D'Uva", "tempo": 2}
+T{"partenza": "Vivaldi", "arrivo": "Carducci", "tempo": 2}
+T{"partenza": "Fincantieri", "arrivo": "Felisati", "tempo": 2}
+T{"partenza": "Olivi", "arrivo": "Felisati", "tempo": 2}
+F{"nome":"Villaggio dei Fiori", "x": 40, "y": 225, "codice": 1}
+T{"partenza": "Corso del Popolo", "arrivo": "Aeroporto", "tempo": 2}
+T{"partenza": "Martiri della Libertà", "arrivo": "Aeroporto", "tempo": 2}
+T{"partenza": "Martiri della Libertà", "arrivo": "Ivancich", "tempo": 2}
+T{"partenza": "Martiri della Libertà", "arrivo": "Mestre Centro", "tempo": 2}
+T{"partenza": "Via Miranese", "arrivo": "Mestre Centro", "tempo": 2}
+T{"partenza": "Via Miranese", "arrivo": "Marghera", "tempo": 2}
+T{"partenza": "Martiri della Libertà", "arrivo": "Corso del Popolo", "tempo": 2}
+T{"partenza": "San Marco", "arrivo": "Giustizia", "tempo": 2}
+T{"partenza": "San Marco", "arrivo": "Cappuccina", "tempo": 2}
+T{"partenza": "San Marco", "arrivo": "Venezia", "tempo": 2}
+T{"partenza": "Venezia", "arrivo": "Vampa", "tempo": 2}
+T{"partenza": "Martellago", "arrivo": "Vampa", "tempo": 2}
+T{"partenza": "Martellago", "arrivo": "Venezia", "tempo": 2}
+T{"partenza": "Piazzale Roma", "arrivo": "Venezia", "tempo": 2}
+T{"partenza": "Martellago", "arrivo": "Graspo D'Uva", "tempo": 2}
+T{"partenza": "Asseggiano", "arrivo": "Graspo D'Uva", "tempo": 2}
+T{"partenza": "Asseggiano", "arrivo": "Piazzale Roma", "tempo": 2}
+T{"partenza": "Asseggiano", "arrivo": "Favaro", "tempo": 2}
+T{"partenza": "Asseggiano", "arrivo": "Fincantieri", "tempo": 2}
+T{"partenza": "Favaro", "arrivo": "Fincantieri", "tempo": 2}
+T{"partenza": "Favaro", "arrivo": "Olivi", "tempo": 2}
+T{"partenza": "Favaro", "arrivo": "Felisati", "tempo": 2}
+T{"partenza": "Olivi", "arrivo": "27 Ottobre", "tempo": 2}
+T{"partenza": "Arduino", "arrivo": "27 Ottobre", "tempo": 2}
+T{"partenza": "Favaro", "arrivo": "27 Ottobre", "tempo": 2}
+T{"partenza": "Favaro", "arrivo": "Arduino", "tempo": 2}
+T{"partenza": "Asseggiano", "arrivo": "Arduino", "tempo": 2}
+T{"partenza": "27 Ottobre", "arrivo": "Via Bissuola", "tempo": 2}
+T{"partenza": "Arduino", "arrivo": "Via Bissuola", "tempo": 2}
+T{"partenza": "Olivi", "arrivo": "San Giuliano", "tempo": 2}
+T{"partenza": "via Piave", "arrivo": "San Giuliano", "tempo": 2}
+T{"partenza": "Stazione F.S.", "arrivo": "San Giuliano", "tempo": 2}
+T{"partenza": "Stazione F.S.", "arrivo": "Zelarino", "tempo": 2}
+T{"partenza": "Carpenedo", "arrivo": "Zelarino", "tempo": 2}
+T{"partenza": "Carpenedo", "arrivo": "Gazzera", "tempo": 2}
+T{"partenza": "Stazione F.S.", "arrivo": "Gazzera", "tempo": 2}
+T{"partenza": "Piazza San Giorgio", "arrivo": "Gazzera", "tempo": 2}
+T{"partenza": "Chiesa Spinea", "arrivo": "Gazzera", "tempo": 2}
+T{"partenza": "San Giuliano", "arrivo": "27 Ottobre", "tempo": 2}
+T{"partenza": "Cappuccina", "arrivo": "Vampa", "tempo": 2}
+T{"partenza": "San Marco", "arrivo": "Piemonte", "tempo": 2}
+T{"partenza": "San Marco", "arrivo": "Villaggio dei Fiori", "tempo": 2}
+T{"partenza": "Villaggio dei Fiori", "arrivo": "Martiri della Libertà", "tempo": 2}
+T{"partenza": "Mestre Centro", "arrivo": "Marghera", "tempo": 2}
+T{"partenza": "Sanremo", "arrivo": "Marghera", "tempo": 2}
+T{"partenza": "San Giuliano", "arrivo": "Zelarino", "tempo": 2}
+T{"partenza": "Villaggio dei Fiori", "arrivo": "Piemonte", "tempo": 2}
+T{"partenza": "Monteverdi", "arrivo": "Piemonte", "tempo": 2}
+T{"partenza": "Corso del Popolo", "arrivo": "Marghera", "tempo": 2}
+B{"nome": "7 Venezia", "fermate": [1, 8, 7, 13, 19, 20, 17, 12, 13, 9, 5, 7, 8, 1]}
+B{"nome": "6 Marghera", "fermate": [3, 5, 9, 13, 12, 17, 20, 19, 14, 15, 14, 10, 24, 23]}
+B{"nome": "7s Foscari Gritti", "fermate": [7, 5, 9, 10, 14, 19, 20, 17, 12, 13, 9, 5, 3]}
+B{"nome": "15 Aeroporto", "fermate": [19, 14, 10, 9, 5, 7, 8, 11, 17, 20, 19, 13, 7, 8, 11, 17, 18]}
+B{"nome": "31h Bissuola", "fermate": [16, 11, 17, 12, 13, 9, 10, 24, 25]}
+B{"nome": "2 V.le Don Sturzo", "fermate": [25, 24, 10, 9, 13, 12, 17, 11, 8, 7, 13, 19, 14, 10, 6, 4]}
+B{"nome": "10 Quarto D'Altino", "fermate": [1, 26, 7, 5, 27, 26, 35, 28, 36, 5, 3, 36, 27, 26, 7, 8, 43]}
+B{"nome": "3 Martellago", "fermate": [8, 43, 11, 16, 18, 41, 42, 22, 20, 37, 39 ,40]}
+B{"nome": "1 Dolo", "fermate": [33, 30, 4, 6, 24, 25, 32, 23, 38, 32, 31, 33]}
+B{"nome": "80 Padova", "fermate": [40, 38, 34, 15, 14, 13, 9, 10, 24, 6, 5, 3, 4, 30, 25, 32]}
+B{"nome": "53 Mestre Centro", "fermate": [1, 8, 7, 13, 19, 20, 17, 12, 13, 9, 5, 7, 8]}
+L{"nome": "Linea 1", "fermate": [5, 8, 7, 1, 9, 3, 10, 6, 4, 13, 12], "colore": "navy"}
+L{"nome": "Linea 2", "fermate": [6, 25, 24, 23, 15, 19, 14, 10, 13, 9], "colore": "red"}
+L{"nome": "Linea 4", "fermate": [16, 11, 8, 12, 17, 18, 20, 22, 19, 13], "colore": "yellow"}
+L{"nome": "Linea 5", "fermate": [1, 26, 7, 27, 5, 16, 3, 28, 35, 36], "colore": "darkCyan"}
+L{"nome": "Linea 6", "fermate": [11, 43, 1, 8, 16, 42, 18, 41, 22, 20], "colore": "darkOrange"}
+L{"nome": "Linea 7", "fermate": [22, 37, 20, 19, 34, 39, 38, 23, 40, 15], "colore": "maroon"}
+L{"nome": "Linea 8", "fermate": [25, 32, 38, 24, 30, 4, 6, 25, 31, 33, 23], "colore": "peru"}

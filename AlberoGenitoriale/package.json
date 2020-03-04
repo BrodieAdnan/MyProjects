@@ -1,0 +1,8 @@
+{
+	"name": "AlberoGenitoriale",
+	"version": "1.0.0",
+	"keywords": ["util", "functional", "server", "client", "browser"],
+	"author": "riccardo.fusaro",
+	"contributors": [],
+	"dependencies": {}
+}

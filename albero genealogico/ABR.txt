@@ -1,0 +1,134 @@
+function Coppia(key, value){
+	this.key=key;
+	this.value=value;
+}
+
+function ABR(){
+	var alb= AlberoBin.EMPTY;
+	var dim=0;
+	//coppia elementi---> chiave(deve essere comparable)= qualsiasi elemento per individuare un oggetto , valore
+	var padre = alberoBin.EMPTY;
+	
+	function ricerca(key){//usato per la cancellazione.
+		var appoggio= alb;
+		padre = alberoBin.EMPTY;
+		while(!appoggio.isEmpty() && key!==appoggio.getInfo().key){
+			padre = appoggio;
+			if(key < appoggio.getInfo().key){
+				appoggio= appoggio.getSx();
+			}else{
+				appoggio= appoggio.getDx();
+			}
+		}
+		return !appoggio.isEmpty()?appoggio: alberoBin.EMPTY;
+	}
+	this.ricerca= function(key){
+		var appoggio= ricerca(key);
+		return !appoggio.isEmpty()?appoggio.getInfo().value: alberoBin.EMPTY;
+	}
+	
+	this.insert = function(key, valore){
+		var ris = false;
+		if(this.ricerca(key)===null){
+			var temp = new AlberoBin(new Coppia(key, valore));
+			ris = true;
+			if(padre.isEmpty()){
+				alb = temp;
+			}else if(key < padre.getInfo().key){
+				padre.setSx(temp);
+			}else{
+				padre.setDx(temp);
+			}
+		}
+		return ris;
+	}
+	
+
+	this.toArray=function(){
+		function toArrayRic(alb){
+			if(!alb.isEmpty()){
+				toArrayRic(alb.getSx());
+				arr.push(alb.getInfo());
+				toArrayRic(alb.getDx());
+			}
+		}
+		var arr=[];
+		toArrayRic(alb);
+		return arr;
+	}
+	
+	this.bilanciamento=function(){
+		var arr = this.toArray();
+		function creaAlbero(estremoSx, estremoDx){
+			var centro=Math.floor((estremoDx+estremoSx)/2);
+			if(estremoSx<=estremoDx){
+				return new AlberoBin(arr[centro], creaAlbero(estremoSx, centro-1), creaAlbero(centro+1, estremoDx);
+			}
+		}
+		alb=creaAlbero(0, arr.length-1);
+	}
+	
+	1. trovare il nodo da cancellare
+	2. sitemare il collegamento cancellato
+	3. se i sottoalberi sono entrambi vuoti colleghiamo l'albero vuoto
+	4. se esiste un solo sottoalbero non vuoto lo colleghiamo al posto di quello cancellato
+	5. se entrambi sono non vuoti colleghiamo il sottoalbero sinistro al posto di quello cancellato
+	   il sottoalbero destro lo colleghiamo come sottoalbero destro del nodo maggiore del sottoalbero sinistro
+	
+	this.cancella = function(key){
+		var nodo = ricerca(key);
+		var set = "";
+		if(!padre.isEmpty()){
+			set = (nodo.getInfo().key < padre.getInfo().key) ? "setSx" : "setDx";
+		}
+		if(nodo.getSx().isEmpty() && nodo.getDx().isEmpty()){
+			if(padre.isEmpty()){
+				alb = padre;
+			} else {
+				padre[set](AlberoBin.EMPTY);
+			}
+		} else if(nodo.getSx().isEmpty() || nodo.getDx().isEmpty()){
+			nodo = nodo.getSx().isEmpty() ? nodo.getDx() : nodo.getSx();
+			if(padre.isEmpty()){
+				alb = nodo;
+			} else {
+				padre[set](nodo);
+			}
+		} else {
+			var max = nodo.getSx();
+			while(!max.getDx().isEmpty()){
+				max = max.getDx();
+			}
+			max.setDx(nodo.getDx());
+			if(padre.isEmpty()){
+				alb = nodo.getSx();
+			} else {
+				padre[set](nodo.getSx());
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

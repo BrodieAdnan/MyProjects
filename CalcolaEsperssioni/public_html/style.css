@@ -1,0 +1,18 @@
+#tab{
+    text-align: left;
+    background-color: darkcyan;
+}
+
+#calc{
+    text-align: left;
+    background-color: blanchedalmond;
+}
+table{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+div{
+    font-family: verdana;
+    font-size: 20px;
+}

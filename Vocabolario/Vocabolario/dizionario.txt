@@ -1,0 +1,14 @@
+cane
+animale tipicamente domestico che abbaia.
+lamantino
+mammifero marino.
+quaderno
+oggetto tipicamente scolastico su cui scrivere.
+casa
+abitazione.
+scuola
+luogo comune di studio.
+zanzara
+animale demoniaco che si svela all'inizio di ogni primavera.
+primavera
+periodo dell'anno che va dalla fine dell'inverno all'inizio dell'estate.

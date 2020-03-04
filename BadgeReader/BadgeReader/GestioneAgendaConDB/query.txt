@@ -1,0 +1,311 @@
+	
+    //DB structure
+    //table ACCOUNT
+    final static String TABLE_ACCOUNT = "ACCOUNT";
+    final static String ACCOUNT_USERNAME = "username";
+    final static String ACCOUNT_PASSWORD = "password";
+    final static String ACCOUNT_NAME = "nome";
+    final static String ACCOUNT_SURNAME = "cognome";
+
+    //table CONTATTO
+    final static String TABLE_CONTATTO = "CONTATTO";
+    final static String CONTATTO_ID = "IDcontatto";
+    final static String CONTATTO_NOME = "nome";
+    final static String CONTATTO_COGNOME = "cognome";
+    final static String CONTATTO_USERNAME = "username";
+
+    //table TELEFONO
+    final static String TABLE_TELEFONO = "TELEFONO";
+    final static String TELEFONO_ID = "IDtelefono";
+    final static String TELEFONO_NUMERO = "numero";
+    final static String TELEFONO_TIPO = "tipo";
+    final static String TELEFONO_CONTATTO = "IDcontatto";
+
+    //queries
+    final static String LOGIN_USER = "SELECT * FROM " + TABLE_ACCOUNT
+            + " WHERE " + TABLE_ACCOUNT + "." + ACCOUNT_USERNAME + "= ? AND " + TABLE_ACCOUNT + "." + ACCOUNT_PASSWORD + "= ?";
+    final static String FREE_USERNAME = "SELECT * FROM " + TABLE_ACCOUNT
+            + " WHERE " + TABLE_ACCOUNT + "." + ACCOUNT_USERNAME + "= ?";
+    final static String REGISTER_USER = "INSERT INTO " + TABLE_ACCOUNT
+            + " (" + ACCOUNT_USERNAME + ", " + ACCOUNT_PASSWORD + ", " + ACCOUNT_NAME + ", " + ACCOUNT_SURNAME + ")"
+            + " VALUES(?,?,?,?)";
+    final static String GET_CONTATTI = "SELECT * FROM " + TABLE_CONTATTO
+            + " WHERE " + TABLE_CONTATTO + "." + CONTATTO_USERNAME + "=?";
+    final static String GET_TELEFONI = "SELECT * FROM " + TABLE_TELEFONO
+            + " WHERE " + TABLE_TELEFONO + "." + TELEFONO_CONTATTO + "=?";
+    final static String ADD_CONTATTO = "INSERT INTO " + TABLE_CONTATTO
+            + "(" + CONTATTO_NOME + ", " + CONTATTO_COGNOME + ", " + CONTATTO_USERNAME + ")"
+            + " VALUES(?,?,?)";
+    final static String ADD_TELEFONO = "INSERT INTO " + TABLE_TELEFONO
+            + " (" + TELEFONO_NUMERO + ", " + TELEFONO_TIPO + ", " + TELEFONO_CONTATTO + ")"
+            + " VALUES(?,?,?)";
+    final static String DELETE_CONTATTO = "DELETE FROM " + TABLE_CONTATTO
+            + " WHERE " + CONTATTO_ID + "=?";
+    final static String DELETE_ALL_TELEFONI = "DELETE FROM " + TABLE_TELEFONO
+            + " WHERE " + TELEFONO_CONTATTO + "=?";
+    final static String DELETE_TELEFONO = "DELETE FROM " + TABLE_TELEFONO
+            + " WHERE " + TELEFONO_ID + "=?";
+    final static String UPDATE_CONTATTO = "UPDATE " + TABLE_CONTATTO
+            + " SET " + CONTATTO_NOME + "=?, " + CONTATTO_COGNOME + "=?"
+            + " WHERE " + CONTATTO_ID + "=?";
+    final static String UPDATE_TELEFONO = "UPDATE " + TABLE_TELEFONO
+            + " SET " + TELEFONO_NUMERO + "=?, " + TELEFONO_TIPO + "=? "
+            + " WHERE " + TELEFONO_ID + "=?";
+
+
+    public static boolean isUserRegistered(String username, String password) {
+        boolean ris = false;
+        try {
+            Connection con = getConnection();
+            PreparedStatement st = con.prepareStatement(LOGIN_USER);
+            st.setString(1, username);
+            st.setString(2, password);
+            ResultSet rs = st.executeQuery();
+            ris = rs.next();
+            rs.close();
+            st.close();
+            closeConnection();
+        } catch (SQLException sqlEx) {
+            Logger.getLogger(SQLhelper.class.getName()).log(Level.SEVERE, null, sqlEx);
+        }
+        return ris;
+    }
+
+    public static Account getAccount(String username, String password) {
+        Account ris = new Account();
+        try {
+            Connection con = getConnection();
+            PreparedStatement st = con.prepareStatement(LOGIN_USER);
+            st.setString(1, username);
+            st.setString(2, password);
+            ResultSet rs = st.executeQuery();
+            if (rs.next()) {
+                ris.setUsername(username);
+                ris.setPassword(password);
+                ris.setNome(rs.getString(ACCOUNT_NAME));
+                ris.setCognome(rs.getString(ACCOUNT_SURNAME));
+            }
+            rs.close();
+            st.close();
+            closeConnection();
+        } catch (SQLException sqlEx) {
+            Logger.getLogger(SQLhelper.class.getName()).log(Level.SEVERE, null, sqlEx);
+        }
+        return ris;
+    }
+
+    public static boolean isUsernameFree(String username) {
+        boolean ris = false;
+        try {
+            Connection con = getConnection();
+            PreparedStatement st = con.prepareStatement(FREE_USERNAME);
+            st.setString(1, username);
+            ResultSet rs = st.executeQuery();
+            ris = rs.next();
+            rs.close();
+            st.close();
+            closeConnection();
+        } catch (SQLException sqlEx) {
+            Logger.getLogger(SQLhelper.class.getName()).log(Level.SEVERE, null, sqlEx);
+        }
+        return !ris;
+    }
+
+    public static void registerAccount(String username, String password, String nome, String cognome) {
+        try {
+            Connection con = getConnection();
+            PreparedStatement reg = con.prepareStatement(REGISTER_USER);
+            reg.setString(1, username);
+            reg.setString(2, password);
+            reg.setString(3, nome);
+            reg.setString(4, cognome);
+            reg.executeUpdate();
+            reg.close();
+            closeConnection();
+        } catch (SQLException sqlEx) {
+            Logger.getLogger(SQLhelper.class.getName()).log(Level.SEVERE, null, sqlEx);
+        }
+    }
+
+    public static void addContatto(Contatto newContatto) {
+        try {
+            Connection con = getConnection();
+            PreparedStatement adCnt = con.prepareStatement(ADD_CONTATTO);
+            adCnt.setString(1, newContatto.getNome());
+            adCnt.setString(2, newContatto.getCognome());
+            adCnt.setString(3, newContatto.getUsername());
+            adCnt.executeUpdate();
+            adCnt.close();
+            closeConnection();
+        } catch (SQLException sqlEx) {
+            Logger.getLogger(SQLhelper.class.getName()).log(Level.SEVERE, null, sqlEx);
+        }
+    }
+
+    public static void addTelefono(Telefono newTelefono) {
+        try {
+            Connection con = getConnection();
+            PreparedStatement adTel = con.prepareStatement(ADD_TELEFONO);
+            adTel.setString(1, newTelefono.getNumero());
+            adTel.setString(2, newTelefono.getTipo() + "");
+            adTel.setInt(3, newTelefono.getIDcontatto());
+            adTel.executeUpdate();
+            adTel.close();
+            closeConnection();
+        } catch (SQLException sqlEx) {
+            Logger.getLogger(SQLhelper.class.getName()).log(Level.SEVERE, null, sqlEx);
+        }
+    }
+
+    public static void deleteContatto(int idContatto) {
+        try {
+            Connection con = getConnection();
+            PreparedStatement delCont = con.prepareStatement(DELETE_CONTATTO);
+            delCont.setInt(1, idContatto);
+            delCont.executeUpdate();
+            delCont.close();
+            closeConnection();
+            deleteAllTelefoni(idContatto);
+        } catch (SQLException sqlEx) {
+            Logger.getLogger(SQLhelper.class.getName()).log(Level.SEVERE, null, sqlEx);
+        }
+    }
+
+    public static void deleteTelefono(int idTelefono) {
+        try {
+            Connection con = getConnection();
+            PreparedStatement delTel = con.prepareStatement(DELETE_TELEFONO);
+            delTel.setInt(1, idTelefono);
+            delTel.executeUpdate();
+            delTel.close();
+            closeConnection();
+        } catch (SQLException sqlEx) {
+            Logger.getLogger(SQLhelper.class.getName()).log(Level.SEVERE, null, sqlEx);
+        }
+    }
+
+    public static void deleteAllTelefoni(int idContatto) {
+        try {
+            Connection con = getConnection();
+            PreparedStatement deletAllTels = con.prepareStatement(DELETE_ALL_TELEFONI);
+            deletAllTels.setInt(1, idContatto);
+            deletAllTels.executeUpdate();
+            deletAllTels.close();
+            closeConnection();
+        } catch (SQLException sqlEx) {
+            Logger.getLogger(SQLhelper.class.getName()).log(Level.SEVERE, null, sqlEx);
+        }
+    }
+
+    public static void updateContatto(String nome, String cognome, int idContatto) {
+        try {
+            Connection con = getConnection();
+            PreparedStatement updCnt = con.prepareStatement(UPDATE_CONTATTO);
+            updCnt.setString(1, nome);
+            updCnt.setString(2, cognome);
+            updCnt.setInt(3, idContatto);
+            updCnt.executeUpdate();
+            updCnt.close();
+            closeConnection();
+        } catch (SQLException sqlEx) {
+            Logger.getLogger(SQLhelper.class.getName()).log(Level.SEVERE, null, sqlEx);
+        }
+    }
+
+    public static void updateTelefono(String numero, char tipo, int idTelefono) {
+        try {
+            Connection con = getConnection();
+            PreparedStatement updTel = con.prepareStatement(UPDATE_TELEFONO);
+            updTel.setString(1, numero);
+            updTel.setString(2, tipo + "");
+            updTel.setInt(3, idTelefono);
+            updTel.executeUpdate();
+            updTel.close();
+            closeConnection();
+        } catch (SQLException sqlEx) {
+            Logger.getLogger(SQLhelper.class.getName()).log(Level.SEVERE, null, sqlEx);
+        }
+
+    }
+
+    public static boolean areThereAnyContatti(String username) {
+        boolean ris = false;
+        try {
+            Connection con = getConnection();
+            PreparedStatement conts = con.prepareStatement(GET_CONTATTI);
+            conts.setString(1, username);
+            ResultSet rs = conts.executeQuery();
+            ris = rs.next();
+            rs.close();
+            conts.close();
+            closeConnection();
+        } catch (SQLException sqlEx) {
+            Logger.getLogger(SQLhelper.class.getName()).log(Level.SEVERE, null, sqlEx);
+        }
+        return ris;
+    }
+
+    public static ArrayList<Contatto> getContatti(String username) {
+        ArrayList<Contatto> ris = new ArrayList<>();
+        try {
+            Connection con = getConnection();
+            PreparedStatement conts = con.prepareStatement(GET_CONTATTI);
+            conts.setString(1, username);
+            ResultSet rs = conts.executeQuery();
+            while (rs.next()) {
+                Contatto c = new Contatto();
+                c.setIDcontatto(rs.getInt(CONTATTO_ID));
+                c.setCognome(rs.getString(CONTATTO_COGNOME));
+                c.setNome(rs.getString(CONTATTO_NOME));
+                c.setUsername(username);
+                ris.add(c);
+            }
+            rs.close();
+            conts.close();
+            closeConnection();
+        } catch (SQLException sqlEx) {
+            Logger.getLogger(SQLhelper.class.getName()).log(Level.SEVERE, null, sqlEx);
+        }
+        return ris;
+    }
+
+    public static boolean areThereAnyTelefoni(int idContatto) {
+        boolean ris = false;
+        try {
+            Connection con = getConnection();
+            PreparedStatement tels = con.prepareStatement(GET_TELEFONI);
+            tels.setInt(1, idContatto);
+            ResultSet rs = tels.executeQuery();
+            ris = rs.next();
+            rs.close();
+            tels.close();
+            closeConnection();
+        } catch (SQLException sqlEx) {
+            Logger.getLogger(SQLhelper.class.getName()).log(Level.SEVERE, null, sqlEx);
+        }
+        return ris;
+    }
+
+    public static ArrayList<Telefono> getTelefoni(int idContatto) {
+        ArrayList<Telefono> ris = new ArrayList<>();
+        try {
+            Connection con = getConnection();
+            PreparedStatement tels = con.prepareStatement(GET_TELEFONI);
+            tels.setInt(1, idContatto);
+            ResultSet rs = tels.executeQuery();
+            while (rs.next()) {
+                Telefono t = new Telefono();
+                t.setIDcontatto(idContatto);
+                t.setIDtelefon(rs.getInt(TELEFONO_ID));
+                t.setTipo(rs.getString(TELEFONO_TIPO).charAt(0));
+                t.setNumero(rs.getString(TELEFONO_NUMERO));
+                ris.add(t);
+            }
+            rs.close();
+            tels.close();
+            closeConnection();
+        } catch (SQLException sqlEx) {
+            Logger.getLogger(SQLhelper.class.getName()).log(Level.SEVERE, null, sqlEx);
+        }
+        return ris;
+    }
