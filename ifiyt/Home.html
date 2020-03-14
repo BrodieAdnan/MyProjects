@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="./css/AboutStyle.css">
+        <link rel="stylesheet" href="./css/AnimationStyle.css">
+        <link rel="stylesheet" href="./css/ButtonStyle.css">
+        <link rel="stylesheet" href="./css/HomeStyle.css">
+        <link rel="stylesheet" href="./css/MainStyle.css">
+        <link rel="stylesheet" href="./css/w3.css">
+        <script async defer src="https://apis.google.com/js/api.js"></script>
+        <script type="text/javascript" src="./js/main.js"></script>
+        <script type="text/javascript" src="./js/speech-synthesis.js"></script>
+        <script type="text/javascript" src="./js/speech-recognition.js"></script>
+        <script type="text/javascript" src="./js/canvas.js"></script>
+    </head>
+
+    <body>
+        <div id="navbar">
+            <div id="navbar-left">
+                <img id="logo" src="./images/icons/logo.png" width="150x" height="135px">
+            </div>
+
+            <div id="navbar-center">
+                I Fix It For YouTube
+            </div>
+
+            <div id="navbar-right">
+                <a id="aboutButton" href="About.html">
+					<img id="about"  src="./images/icons/aboutUs.svg">
+                </a>
+
+                <a id="homeButton" class="activeted" href="Home.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
+                    </svg>
+                </a>
+
+                <a id="signInOutBtn" href="" onclick="buttonSwitcher('log', 2, './images/icons/')">
+                    
+					<img id="search" width="24" height= "24" src="./images/icons/signGoogle.svg">
+                </a>
+            </div>
+        </div>
+
+        <div id="page">
+            <div id="leftPart" class="w3-half w3-container w3-white w3-border w3-center w3-card-4 w3-panel w3-section" onclick="scrollClick()">
+
+                <p id="recording-instructions"><h4><strong>Input Box</strong></h4>
+
+                <div class="input-single">
+                    <textarea id="noteTextarea" class="txtA" type="text" name="search" placeholder="Digita un comando..."></textarea>
+                </div>
+
+                <div class="tooltip" onclick="buttonSwitcher('primo', 0, './images/icons/')">
+                    <span class="tooltiptext">Comincia l'ascolto</span>
+                    <button class="button tooltip" id="start-record-btn">
+                        <img id="primo" src="./images/icons/play.svg">
+                    </button>
+                </div>
+
+                <div class="tooltip" onclick="buttonTempSwitcher('./images/icons/')">
+                    <span class="tooltiptext">Lettura ad alta voce</span>
+                    <button class="button" id="speak-btn">
+                        <img id="secondo" src="./images/icons/leggi.svg">
+                    </button>
+                </div>
+
+                <div class="tooltip">
+                    <span class="tooltiptext">Reset</span>
+                    <button class="button" id="reset-btn">
+                        <img src="./images/icons/reset.svg">
+                    </button>
+                </div>
+            </div>
+
+            <div id="rightPart" class="w3-third w3-white w3-container w3-center w3-card-4 w3-panel w3-section" onclick="scrollClick()">
+                <p><h4><strong>Voice Assistant Box</strong></h4>
+                <div id="canvasDiv">
+					<div  id="cloudSpeaking"><p id="cloudContent">Benvenuto!</p></div>
+				</div>
+            </div>
+
+            <div id="videoPlayer" class="w3-twothird w3-black w3-container w3-center w3-card-4 w3-panel w3-section" style="display:none" onclick="scrollClick()">
+                <p id="vp">
+                    <h4><strong>YouTube Video Player
+                    <button id="VPButton" onclick="closeVP()">
+                        <img src="./images/icons/close.svg">
+                    </button>
+            </strong></h4>
+                </p>
+                <div id="iframe_area"></div>
+            </div>
+        </div>
+
+    </body>
+</html>

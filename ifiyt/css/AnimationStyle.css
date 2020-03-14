@@ -1,0 +1,183 @@
+/*****************
+   ANIMATION STYLE
+******************/
+
+/* TEXT AREA CLASS */
+.txtA{
+    z-index: 4;
+    margin-top: 10%;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: 250px;
+    height: 100px;
+    box-sizing: border-box;
+	background-image: url('./search.svg');
+    border: 3px solid red;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 36px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    transition: width 0.5s ease-in-out;
+}
+
+/* TEXT AREA PLACEHOLDER */
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    line-height:70px;
+}
+::-webkit-input-placeholder { /* Webkit */
+    line-height:70px;
+}
+:-ms-input-placeholder { /* IE */
+    line-height:70px;
+}
+
+/* TEXT AREA ENLARGMENT ON HOVER */
+.txtA:hover {
+    width: 80%;
+}
+
+/* SLIDE UP ANIMATION EFFECT */
+@keyframes slideLeft {
+    0% {
+        transform: translateX(150%);
+    }
+    50%{
+        transform: translateX(-8%);
+    }
+    65%{
+        transform: translateX(4%);
+    }
+    80%{
+        transform: translateX(-4%);
+    }
+    95%{
+        transform: translateX(2%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+/* SLIDE RIGHT ANIMATION EFFECT */
+@keyframes slideRight {
+    0% {
+        transform: translateX(-150%);
+    }
+    50%{
+        transform: translateX(8%);
+    }
+    65%{
+        transform: translateX(-4%);
+    }
+    80%{
+        transform: translateX(4%);
+    }
+    95%{
+        transform: translateX(-2%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+/* SLIDE UP ANIMATION EFFECT */
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+    }
+    50%{
+        transform: translateY(-8%);
+    }
+    65%{
+        transform: translateY(4%);
+    }
+    80%{
+        transform: translateY(-4%);
+    }
+    95%{
+        transform: translateY(2%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+/*  SLIDE DOWN ANIMATION EFFECT */
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+    }
+    50%{
+        transform: translateY(8%);
+    }
+    65%{
+        transform: translateY(-4%);
+    }
+    80%{
+        transform: translateY(4%);
+    }
+    95%{
+        transform: translateY(-2%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+/* CARD ENTRY ANIMATION */
+#videoPlayer {
+    border-radius: 5% 5% 1% 1%;
+    transition-duration: 0.4s;
+
+    animation-name: slideUp;
+
+    animation-duration: 1s;
+
+    animation-timing-function: ease-in-out;
+}
+
+/* CARD ENTRY ANIMATION */
+#leftPart{
+    border-radius: 5%;
+    transition-duration: 0.4s;
+
+    animation-name: slideRight;
+
+    animation-duration: 1s;
+
+    animation-timing-function: ease-in-out;
+}
+
+/* CARD ENTRY ANIMATION */
+#rightPart{
+    border-radius: 5%;
+    transition-duration: 0.4s;
+    animation-name: slideLeft;
+
+    animation-duration: 1s;
+
+    animation-timing-function: ease-in-out;
+}
+
+/* CARD HOVER */
+#videoPlayer:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    transform: scale(1.02);
+}
+
+/* CARD HOVER */
+#leftPart:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    transform: scale(1.02);
+}
+
+/* CARD HOVER */
+#rightPart:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    transform: scale(1.02);
+}
+
+/* FINE ANIMATION STYLE */

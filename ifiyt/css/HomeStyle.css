@@ -1,0 +1,95 @@
+/***********************
+   HOME STYLE --> NAVBAR
+************************/
+
+/* NAVBAR MENU */
+#navbar {
+    box-shadow: 0px 7px 20px 4px rgba(0,0,0,0.24), -20px -17px 0px 0 rgba(0,0,0,0.19);
+    z-index: 5;
+    display: flex;
+    background-color: white;
+    padding: 30px 0px;
+    transition: 0.5s;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+/* NAVBAR MENU ON HOVER */
+#navbar a:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    transform: scale(1.2);
+    opacity: 0.7;
+}
+
+/* NAVBAR BUTTON */
+#navbar a {
+    transition: all 0.3s ease-in-out;
+    outline: none;
+    float: right;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 30px;
+    border-radius: 5px;
+}
+
+/* NAVBAR BUTTON */
+#aboutButton, #homeButton, #signInOutBtn {
+	margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* NAVBAR BUTTON ON HOVER */
+#navbar a:hover {
+    background-color: lightgrey;
+}
+
+/* SELECTED NAVBAR BUTTON */
+#navbar a.activeted {
+    background-color: dodgerblue;
+    color: white;
+}
+
+/* TITLE */
+#navbar-center {
+    transition: all 0.3s ease-in-out;
+    flex: 1;
+    text-align: center;
+    padding: 25px;
+    font-size: 40px;
+}
+
+/* TITLE ON HOVER */
+#navbar-center:hover {
+    transform: scale(1.3);
+}
+
+/* LOGO ON HOVER */
+#logo:hover {
+    transform: scale(1.3);
+}
+
+/* LOGO */
+#logo {
+    transition: all 0.3s ease-in-out;
+}
+
+/* LOGO */
+#navbar-left {
+    flex: 1;
+    float: left;
+    padding: 0px 50px;
+}
+
+/* BUTTONS */
+#navbar-right {
+    flex: 1;
+    float: right;
+    padding-top: 5px;
+    padding-right: 10px;
+}
+
+/* FINE HOME STYLE */

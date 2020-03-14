@@ -1,0 +1,96 @@
+/*****************
+   MAIN STYLE
+******************/
+
+/* BODY STYLE */
+body {
+    background-color: #e6e6e6;
+    z-index: 1;
+    font-family: Arial, Helvetica, serif;
+}
+
+/* MAIN PAGE CARDS */
+#page {
+    z-index: 2;
+    margin-left: 10%;
+    padding-top: 250px;
+    width: 90%;
+}
+
+/* CARDS */
+#leftPart, #rightPart {
+    margin: 21px;
+    z-index: 3;
+    height: 450px;
+}
+
+/* VIDEO PLAYER iFRAME */
+#iframe_area {
+    height: 100%;
+    width: 100%;
+}
+
+/* VIDEO PLAYER */
+#videoPlayer {
+    height: 650px;
+    width: 66%;
+    margin: 13%;
+    z-index: 3;
+}
+
+/* TEXT AREA */
+#noteTextarea {
+    outline: none;
+}
+
+/* ABOUT PAGE'S INSTRUCITONS */
+#instructions {
+	font-size:80%;
+	margin-left: 10%;
+}
+
+/* TITLE OF CARDS */
+#isTitle {
+	margin-left: 5%;
+}
+
+/* TITLE AND INSTRUCITONS */
+#isTitle, #instructions {
+	text-align: left;
+	
+}
+
+/* CLOUD TEXT */
+#cloudContent {
+    vertical-align: central;
+	font-size: 17px;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+/* CLOUD SPEAKING */
+#cloudSpeaking{
+	background-color: lightgrey;
+	border-radius: 10px;
+	width: 50%;
+	height: 60px;
+	margin-left: 5%;
+	margin-top: 20%
+}
+
+/* VIDEO PLAYER */
+#vp {
+    color: white;
+}
+
+/* VIDEO PLAYER CLOSE BUTTON */
+#VPButton {
+    background-color: white;
+    margin: 4px 4px;
+    outline: none;
+    padding: 4px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* FINE MAIN STYLE */
