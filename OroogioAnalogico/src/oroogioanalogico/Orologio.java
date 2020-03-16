@@ -14,11 +14,11 @@ import static zuclib.GraficaSemplice.*;
 class Orologio {
 
     private CifraFinale decineO; //nasce l'oggetto decineO.
-    private Cifra unitaO; //nasce l'oggetto unitaO.
-    private Cifra decineM; //nasce l'oggetto decineM.
-    private Cifra unitaM; //nasce l'oggetto unitaM.
-    private Cifra decineS; //nasce l'oggetto decineS.
-    private Cifra unitaS; //nasce l'oggetto unitaS.
+    private CifraFinale unitaO; //nasce l'oggetto unitaO.
+    private CifraFinale decineM; //nasce l'oggetto decineM.
+    private CifraFinale unitaM; //nasce l'oggetto unitaM.
+    private CifraFinale decineS; //nasce l'oggetto decineS.
+    private CifraFinale unitaS; //nasce l'oggetto unitaS.
     private int[] con;
     private double[] appoggio;
     private Digit d;
